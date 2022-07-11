@@ -1,0 +1,150 @@
+﻿@model CPMSDbFirst.Models.Review
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Review</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AppropriatenessOfTopic)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AppropriatenessOfTopic)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimelinessOfTopic)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimelinessOfTopic)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SupportiveEvidence)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SupportiveEvidence)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TechnicalQuality)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TechnicalQuality)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ScopeOfCoverage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ScopeOfCoverage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CitationOfPreviousWork)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CitationOfPreviousWork)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Originality)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Originality)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ContentComments)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ContentComments)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OrganizationOfPaper)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrganizationOfPaper)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ClarityOfMainMessage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClarityOfMainMessage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mechanics)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mechanics)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WrittenDocumentComments)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WrittenDocumentComments)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SuitabilityForPresentation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SuitabilityForPresentation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PotentialInterestInTopic)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PotentialInterestInTopic)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PotentialForOralPresentationComments)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PotentialForOralPresentationComments)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OverallRating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OverallRating)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OverallRatingComments)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OverallRatingComments)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ComfortLevelTopic)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ComfortLevelTopic)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ComfortLevelAcceptability)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ComfortLevelAcceptability)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Complete)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Complete)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Paper)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Paper.PaperId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Reviewer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Reviewer.ReviewerId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ReviewId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

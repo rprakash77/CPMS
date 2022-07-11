@@ -1,0 +1,270 @@
+﻿@model CPMSDbFirst.Models.Paper
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Paper</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FilenameOriginal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FilenameOriginal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Filename)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Filename)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Certification)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Certification)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotesToReviewers)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotesToReviewers)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnalysisOfAlgorithms)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AnalysisOfAlgorithms)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Applications)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Applications)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Architecture)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Architecture)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ArtificialIntelligence)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ArtificialIntelligence)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ComputerEngineering)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ComputerEngineering)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Curriculum)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Curriculum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataStructures)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataStructures)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Databases)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Databases)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DistanceLearning)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DistanceLearning)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DistributedSystems)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DistributedSystems)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EthicalSocietalIssues)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EthicalSocietalIssues)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstYearComputing)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstYearComputing)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GenderIssues)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GenderIssues)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GrantWriting)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GrantWriting)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GraphicsImageProcessing)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GraphicsImageProcessing)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HumanComputerInteraction)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HumanComputerInteraction)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LaboratoryEnvironments)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LaboratoryEnvironments)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Literacy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Literacy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MathematicsInComputing)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MathematicsInComputing)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Multimedia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Multimedia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NetworkingDataCommunications)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NetworkingDataCommunications)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NonMajorCourses)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NonMajorCourses)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ObjectOrientedIssues)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ObjectOrientedIssues)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OperatingSystems)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OperatingSystems)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ParallelProcessing)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ParallelProcessing)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pedagogy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pedagogy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProgrammingLanguages)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProgrammingLanguages)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Research)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Research)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Security)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Security)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SoftwareEngineering)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SoftwareEngineering)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SystemsAnalysisAndDesign)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SystemsAnalysisAndDesign)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UsingTechnologyInTheClassroom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UsingTechnologyInTheClassroom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WebAndInternetProgramming)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WebAndInternetProgramming)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OtherDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OtherDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Author.AuthorId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PaperId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

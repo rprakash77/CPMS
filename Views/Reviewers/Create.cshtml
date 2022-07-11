@@ -1,0 +1,462 @@
+﻿@model CPMSDbFirst.Models.Reviewer
+
+@{
+    ViewData["Title"] = "Reviewer Registration";
+}
+<script>
+    var expanded = false;
+
+    function showCheckboxes() {
+        var checkboxes = document.getElementById("checkboxes");
+        if (!expanded) {
+            checkboxes.style.display = "block";
+            expanded = true;
+            document.getElementsByClassName("continue")[0].style.top = "130px";
+            document.getElementsByClassName("other")[0].style.top = "120px";
+        } else {
+            checkboxes.style.display = "none";
+            expanded = false;
+            document.getElementsByClassName("continue")[0].style.top = "55px";
+            document.getElementsByClassName("other")[0].style.top = "-80px";
+        }
+    }
+</script>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CPMS.styles.css" asp-append-version="true" />
+    <style>
+        body{
+                background-color:lightgray;
+        }
+        h1 {
+            border-style:solid; 
+            padding-left:7.5px; 
+            background-color:white;
+            padding-bottom:15px;
+            margin-bottom:10px;
+        }
+        h5{
+            padding-top:6px;
+            border-style:solid; 
+            padding-left:7.5px; 
+            background-color:white;
+            padding-bottom:6px;
+            font-weight:bold;
+        }
+        .fieldlabels{
+                background-color:white;
+                padding-bottom:5px;
+                padding-left:7px;
+                border-style: solid;
+                font-weight:bold;
+                display: inline-block;
+                float: left;
+                width: 250px;
+                height:30px;
+                text-align: left; /*Change to right here if you want it close to the inputs*/
+                white-space: nowrap;
+                margin-bottom: 25px;
+        }
+        span {
+            font-size:14pt;
+            font-weight:bold;
+            color:red; 
+        }
+        .datafields {
+                padding-bottom:5px;
+                padding-left:10px;
+                border-style: solid;
+                border-color:black;
+                border-width: 3px;
+                font-weight:bold;
+                width: 250px;
+                height:30px;
+                margin-left:50px;
+                white-space: nowrap; /* Prevents wrapping */
+                margin-bottom: 25px;
+        }
+        .column1 {
+            display: inline-block;
+             white-space: nowrap;
+             float:left;
+             margin-right: 150px;
+        }
+        .column2{
+            float:right;
+        }
+        .multiselect {
+            float:right;
+            border-style:solid;
+            width: 550px;
+            background-color:white;
+        }
+        .selectBox {
+          position: relative;
+        }
+
+        .selectBox select {
+          width: 100%;
+          font-weight: bold;
+          padding-bottom:5px;
+          padding-left:5px; 
+          display:inline;
+          border-style:none;
+        }
+        .selectBox select:hover {
+            background-color:deepskyblue;
+        }
+        #checkboxes {
+          padding-left:5px;
+          padding-top:5px;
+          float:right;
+          margin-top:5px;
+          display: none;
+          border: 1px #dadada solid;
+          overflow: scroll;
+          resize: both;
+          height: 200px;
+          background-color:white;
+          width:550px;
+          border: solid #000;
+        }
+        #checkboxes label {
+          font-weight:bold;
+          display: inline-block;
+          padding-top:10px;
+          position:relative;
+          padding-right:1000px;
+          white-space: nowrap;
+        }
+        #checkboxes label::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+        }
+        #checkboxes :hover {
+          background-color: deepskyblue;
+        }
+        .continue{
+            width:250px;
+            position:relative;
+            left:1075px;
+            top:55px;
+            z-index:-100;
+        }
+        .continue input {
+            border-style:solid;
+            border-width:3px;
+            font-weight:bold; 
+        }
+         .continue input:hover {
+            background-color: yellow;
+        }
+        .other{
+            width:250px;
+            position:relative;
+            top:-80px;
+        }
+        .other input {
+            padding-bottom:5px;
+            padding-left:10px;
+            border-style:solid;
+            border-width:3px;
+            font-weight:bold; 
+            width: 250px;
+            height:30px;
+            float:right;
+            position:relative;
+            top:-5px;
+            left:1045px;
+            right:200px;
+        }
+        .other label {
+            padding-bottom:5px;
+            padding-left:7px;
+            border-style:solid;
+            background-color:white;
+            border-width:3px;
+            font-weight:bold; 
+            width: 250px;
+            height:30px;
+            float:left;
+            position:relative;
+            left:745px;
+            top:25px;
+        }
+    </style>
+</head>
+
+<h1> Registration</h1>
+
+<h5 >Instructions: Please fill out the information below</h5>
+<hr />
+<div>
+    <div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="column1">
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+            <div>
+                <label asp-for="FirstName" class="fieldlabels"></label>
+                <input asp-for="FirstName" class="datafields" />
+            </div>
+            <span asp-validation-for="MiddleInitial" class="text-danger"></span>
+            <div>
+                <label asp-for="MiddleInitial" class="fieldlabels"></label>
+                <input asp-for="MiddleInitial" class="datafields" />
+            </div>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+            <div>
+                <label asp-for="LastName" class="fieldlabels"></label>
+                <input asp-for="LastName" class="datafields" />               
+            </div>
+            <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            <div>
+                <label asp-for="EmailAddress" class="fieldlabels"></label>
+                <input asp-for="EmailAddress" class="datafields" />
+            </div>
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <div>
+                <label asp-for="Password" class="fieldlabels"></label>
+                <input asp-for="Password" class="datafields" />
+            </div>
+            <span asp-validation-for="Affiliation" class="text-danger"></span>
+            <div>
+                <label asp-for="Affiliation" class="fieldlabels"></label>
+                <input asp-for="Affiliation" class="datafields" />
+            </div>
+            <div>
+                <label asp-for="Department" class="fieldlabels"></label>
+                <input asp-for="Department" class="datafields" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="column2">
+            <div>
+                <label asp-for="Address" class="fieldlabels"></label>
+                <input asp-for="Address" class="datafields" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="City" class="fieldlabels"></label>
+                <input asp-for="City" class="datafields" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="State" class="fieldlabels"></label>
+                <input asp-for="State" class="datafields" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="ZipCode" class="fieldlabels"></label>
+                <input asp-for="ZipCode" class="datafields" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="PhoneNumber" class="fieldlabels"></label>
+                <input asp-for="PhoneNumber" class="datafields" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            </div>
+             <div class="multiselect">
+                <div class="selectBox" onclick="showCheckboxes()">
+                     <select>
+                        <option>Please select the topics you are interested in: </option>
+                     </select>
+                  </div>
+            </div>
+
+            <div id="checkboxes">
+            <div>
+               <label class="">
+                    <input class=" " asp-for="AnalysisOfAlgorithms" /> @Html.DisplayNameFor(model => model.AnalysisOfAlgorithms)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Applications" /> @Html.DisplayNameFor(model => model.Applications)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Architecture" /> @Html.DisplayNameFor(model => model.Architecture)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="ArtificialIntelligence" /> @Html.DisplayNameFor(model => model.ArtificialIntelligence)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="ComputerEngineering" /> @Html.DisplayNameFor(model => model.ComputerEngineering)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Curriculum" /> @Html.DisplayNameFor(model => model.Curriculum)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="DataStructures" /> @Html.DisplayNameFor(model => model.DataStructures)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Databases" /> @Html.DisplayNameFor(model => model.Databases)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="DistanceLearning" /> @Html.DisplayNameFor(model => model.DistanceLearning)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="DistributedSystems" /> @Html.DisplayNameFor(model => model.DistributedSystems)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="EthicalSocietalIssues" /> @Html.DisplayNameFor(model => model.EthicalSocietalIssues)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="FirstYearComputing" /> @Html.DisplayNameFor(model => model.FirstYearComputing)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="GenderIssues" /> @Html.DisplayNameFor(model => model.GenderIssues)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="GrantWriting" /> @Html.DisplayNameFor(model => model.GrantWriting)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="GraphicsImageProcessing" /> @Html.DisplayNameFor(model => model.GraphicsImageProcessing)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="HumanComputerInteraction" /> @Html.DisplayNameFor(model => model.HumanComputerInteraction)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="LaboratoryEnvironments" /> @Html.DisplayNameFor(model => model.LaboratoryEnvironments)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Literacy" /> @Html.DisplayNameFor(model => model.Literacy)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="MathematicsInComputing" /> @Html.DisplayNameFor(model => model.MathematicsInComputing)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Multimedia" /> @Html.DisplayNameFor(model => model.Multimedia)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="NetworkingDataCommunications" /> @Html.DisplayNameFor(model => model.NetworkingDataCommunications)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="NonMajorCourses" /> @Html.DisplayNameFor(model => model.NonMajorCourses)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="ObjectOrientedIssues" /> @Html.DisplayNameFor(model => model.ObjectOrientedIssues)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="OperatingSystems" /> @Html.DisplayNameFor(model => model.OperatingSystems)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="ParallelProcessing" /> @Html.DisplayNameFor(model => model.ParallelProcessing)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Pedagogy" /> @Html.DisplayNameFor(model => model.Pedagogy)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="ProgrammingLanguages" /> @Html.DisplayNameFor(model => model.ProgrammingLanguages)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Research" /> @Html.DisplayNameFor(model => model.Research)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Security" /> @Html.DisplayNameFor(model => model.Security)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="SoftwareEngineering" /> @Html.DisplayNameFor(model => model.SoftwareEngineering)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="SystemsAnalysisAndDesign" /> @Html.DisplayNameFor(model => model.SystemsAnalysisAndDesign)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="UsingTechnologyInTheClassroom" /> @Html.DisplayNameFor(model => model.UsingTechnologyInTheClassroom)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="WebAndInternetProgramming" /> @Html.DisplayNameFor(model => model.WebAndInternetProgramming)
+                </label>
+            </div>
+            <div >
+                <label class="">
+                    <input class=" " asp-for="Other" /> @Html.DisplayNameFor(model => model.Other)
+                </label>
+            </div> 
+            </div>
+             <div class="other">
+                <label asp-for="OtherDescription"></label>
+                <input style="float:right;" asp-for="OtherDescription" />
+                <span asp-validation-for="OtherDescription" class="text-danger"></span>
+            </div>         
+            <div class="continue">
+            <input type="submit" value="Continue & Submit Review"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,139 @@
+﻿@model CPMSDbFirst.Models.Review
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Review</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ReviewId" />
+            <div class="form-group">
+                <label asp-for="PaperId" class="control-label"></label>
+                <select asp-for="PaperId" class="form-control" asp-items="ViewBag.PaperId"></select>
+                <span asp-validation-for="PaperId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReviewerId" class="control-label"></label>
+                <select asp-for="ReviewerId" class="form-control" asp-items="ViewBag.ReviewerId"></select>
+                <span asp-validation-for="ReviewerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppropriatenessOfTopic" class="control-label"></label>
+                <input asp-for="AppropriatenessOfTopic" class="form-control" />
+                <span asp-validation-for="AppropriatenessOfTopic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimelinessOfTopic" class="control-label"></label>
+                <input asp-for="TimelinessOfTopic" class="form-control" />
+                <span asp-validation-for="TimelinessOfTopic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupportiveEvidence" class="control-label"></label>
+                <input asp-for="SupportiveEvidence" class="form-control" />
+                <span asp-validation-for="SupportiveEvidence" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TechnicalQuality" class="control-label"></label>
+                <input asp-for="TechnicalQuality" class="form-control" />
+                <span asp-validation-for="TechnicalQuality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScopeOfCoverage" class="control-label"></label>
+                <input asp-for="ScopeOfCoverage" class="form-control" />
+                <span asp-validation-for="ScopeOfCoverage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CitationOfPreviousWork" class="control-label"></label>
+                <input asp-for="CitationOfPreviousWork" class="form-control" />
+                <span asp-validation-for="CitationOfPreviousWork" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Originality" class="control-label"></label>
+                <input asp-for="Originality" class="form-control" />
+                <span asp-validation-for="Originality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContentComments" class="control-label"></label>
+                <input asp-for="ContentComments" class="form-control" />
+                <span asp-validation-for="ContentComments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrganizationOfPaper" class="control-label"></label>
+                <input asp-for="OrganizationOfPaper" class="form-control" />
+                <span asp-validation-for="OrganizationOfPaper" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClarityOfMainMessage" class="control-label"></label>
+                <input asp-for="ClarityOfMainMessage" class="form-control" />
+                <span asp-validation-for="ClarityOfMainMessage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mechanics" class="control-label"></label>
+                <input asp-for="Mechanics" class="form-control" />
+                <span asp-validation-for="Mechanics" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WrittenDocumentComments" class="control-label"></label>
+                <input asp-for="WrittenDocumentComments" class="form-control" />
+                <span asp-validation-for="WrittenDocumentComments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SuitabilityForPresentation" class="control-label"></label>
+                <input asp-for="SuitabilityForPresentation" class="form-control" />
+                <span asp-validation-for="SuitabilityForPresentation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PotentialInterestInTopic" class="control-label"></label>
+                <input asp-for="PotentialInterestInTopic" class="form-control" />
+                <span asp-validation-for="PotentialInterestInTopic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PotentialForOralPresentationComments" class="control-label"></label>
+                <input asp-for="PotentialForOralPresentationComments" class="form-control" />
+                <span asp-validation-for="PotentialForOralPresentationComments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OverallRating" class="control-label"></label>
+                <input asp-for="OverallRating" class="form-control" />
+                <span asp-validation-for="OverallRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OverallRatingComments" class="control-label"></label>
+                <input asp-for="OverallRatingComments" class="form-control" />
+                <span asp-validation-for="OverallRatingComments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComfortLevelTopic" class="control-label"></label>
+                <input asp-for="ComfortLevelTopic" class="form-control" />
+                <span asp-validation-for="ComfortLevelTopic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComfortLevelAcceptability" class="control-label"></label>
+                <input asp-for="ComfortLevelAcceptability" class="form-control" />
+                <span asp-validation-for="ComfortLevelAcceptability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Complete" class="control-label"></label>
+                <input asp-for="Complete" class="form-control" />
+                <span asp-validation-for="Complete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

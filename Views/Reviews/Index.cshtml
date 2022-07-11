@@ -1,0 +1,161 @@
+﻿@model IEnumerable<CPMSDbFirst.Models.Review>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AppropriatenessOfTopic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimelinessOfTopic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupportiveEvidence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalQuality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScopeOfCoverage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CitationOfPreviousWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Originality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContentComments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrganizationOfPaper)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClarityOfMainMessage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mechanics)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WrittenDocumentComments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SuitabilityForPresentation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PotentialInterestInTopic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PotentialForOralPresentationComments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OverallRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OverallRatingComments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComfortLevelTopic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComfortLevelAcceptability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Complete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paper)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reviewer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppropriatenessOfTopic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimelinessOfTopic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupportiveEvidence)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechnicalQuality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScopeOfCoverage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CitationOfPreviousWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Originality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentComments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrganizationOfPaper)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClarityOfMainMessage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mechanics)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WrittenDocumentComments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuitabilityForPresentation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PotentialInterestInTopic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PotentialForOralPresentationComments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OverallRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OverallRatingComments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComfortLevelTopic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComfortLevelAcceptability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paper.PaperId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reviewer.ReviewerId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReviewId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReviewId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReviewId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

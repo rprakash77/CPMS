@@ -1,0 +1,23 @@
+﻿<ul class="navbar-nav">
+    @if (User.Identity.IsAuthenticated)
+    {
+         <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Reviewers" asp-action="Logout">Log Out</a>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Authors" asp-action="Create">Author Registration</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Reviewers" asp-action="Create">Reviewer Registration</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Authors" asp-action="AuthorLogin">Author Log In</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Reviewers" asp-action="ReviewerLogin">Reviewer Log In</a>
+        </li>  
+    }
+</ul>
