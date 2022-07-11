@@ -73,6 +73,7 @@ namespace CPMSDbFirst.Controllers
             {
                 _context.Add(author);
                 await _context.SaveChangesAsync();
+                TempData["success"] = "You have been registered successfully! Please Login!";
                 return RedirectToAction("Index", "Home");
             }
             return View(author);
@@ -165,6 +166,7 @@ namespace CPMSDbFirst.Controllers
             }
             
             await _context.SaveChangesAsync();
+            TempData["success"] = "Table Updated Successfully!";
             return RedirectToAction("Index"); ;
         }
 
@@ -191,6 +193,7 @@ namespace CPMSDbFirst.Controllers
                 return View();
             }
             await SignInAuthor(EmailAddress);
+            TempData["success"] = "You have logged in succesfully!";
             return RedirectToAction("Index", "Home");
         }
 
@@ -211,6 +214,7 @@ namespace CPMSDbFirst.Controllers
         }
 
         //Checks if Author has register
+        //Uses SQL procedure from database "Auhtor Login"
         private bool AuthorCredentials(string Email, string Password)
         {
             using (SqlConnection SqlConn = new SqlConnection("Server=GLENN-LAPTOP;Database=CPMS;Trusted_Connection=True;"))

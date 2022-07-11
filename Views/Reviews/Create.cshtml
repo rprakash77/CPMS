@@ -4,131 +4,327 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CPMS.styles.css" asp-append-version="true" />
+    <style>
+        body{
+                background-color:lightgray;
+        }
+        h1 {
+            border-style:solid; 
+            padding-left:7.5px; 
+            background-color:white;
+            padding-bottom:15px;
+            margin-bottom:10px;
+        }
+        h5{
+            padding-top:6px;
+            border-style:solid; 
+            padding-left:7.5px; 
+            background-color:white;
+            padding-bottom:6px;
+            font-weight:bold;
+        }
+        .fieldlabels{
+                background-color:white;
+                padding-bottom:5px;
+                padding-left:7px;
+                border-style: solid;
+                font-weight:bold;
+                display: inline-block;
+                float: left;
+                width: 250px;
+                height:30px;
+                text-align: left; /*Change to right here if you want it close to the inputs*/
+                white-space: nowrap;
+                margin-bottom: 25px;
+        }
+        span {
+            font-size:14pt;
+            font-weight:bold;
+            color:red; 
+        }
+        .datafields {
+                padding-bottom:5px;
+                padding-left:10px;
+                border-style: solid;
+                border-color:black;
+                border-width: 3px;
+                font-weight:bold;
+                width: 100px;
+                height:30px;
+                margin-left:50px;
+                white-space: nowrap; /* Prevents wrapping */
+                margin-bottom: 25px;
+        }
+        .datafields2 {
+                padding-bottom:5px;
+                padding-left:10px;
+                border-style: solid;
+                border-color:black;
+                border-width: 3px;
+                font-weight:bold;
+                width: 250px;
+                height:30px;
+                margin-left:50px;
+                white-space: nowrap; /* Prevents wrapping */
+                margin-bottom: 25px;
+        }
+        .column1 {
+            display: inline-block;
+             white-space: nowrap;
+             float:left;
+             margin-right: 150px;
+        }
+        .column2{
+            float:right;
+        }
 
-<h4>Review</h4>
+        .continue{
+            width:250px;
+            position:relative;
+            border-color:black;
+        }
+        .continue input {
+            border-style:solid;
+            border-width:3px;
+            font-weight:bold; 
+            z-index:10;
+            position:relative;
+        }
+         .continue input:hover {
+            background-color: yellow;
+        }
+        .PaperTitle {
+            background-color:white;
+            padding-bottom:5px;
+            padding-left:7px;
+            border-style: solid;
+            font-weight:bold;
+            display: inline-block;
+            float: left;
+            width: 500px;
+            height:30px;
+            text-align: left; /*Change to right here if you want it close to the inputs*/
+            margin-bottom: 35px;
+        }
+
+        
+    </style>
+</head>
+
+<h1 >
+    Paper Review
+    </h1>
+
+<h5 >
+    Instructions: For each category choose a score from 1 to 5, where 1 = Poor, 2 = Fair, 3 = Average, 4 = Good, 5 = Excellent.
+</h5>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PaperId" class="control-label"></label>
-                <select asp-for="PaperId" class ="form-control" asp-items="ViewBag.PaperId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReviewerId" class="control-label"></label>
-                <select asp-for="ReviewerId" class ="form-control" asp-items="ViewBag.ReviewerId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="AppropriatenessOfTopic" class="control-label"></label>
-                <input asp-for="AppropriatenessOfTopic" class="form-control" />
-                <span asp-validation-for="AppropriatenessOfTopic" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TimelinessOfTopic" class="control-label"></label>
-                <input asp-for="TimelinessOfTopic" class="form-control" />
-                <span asp-validation-for="TimelinessOfTopic" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SupportiveEvidence" class="control-label"></label>
-                <input asp-for="SupportiveEvidence" class="form-control" />
-                <span asp-validation-for="SupportiveEvidence" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TechnicalQuality" class="control-label"></label>
-                <input asp-for="TechnicalQuality" class="form-control" />
-                <span asp-validation-for="TechnicalQuality" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ScopeOfCoverage" class="control-label"></label>
-                <input asp-for="ScopeOfCoverage" class="form-control" />
-                <span asp-validation-for="ScopeOfCoverage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CitationOfPreviousWork" class="control-label"></label>
-                <input asp-for="CitationOfPreviousWork" class="form-control" />
-                <span asp-validation-for="CitationOfPreviousWork" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Originality" class="control-label"></label>
-                <input asp-for="Originality" class="form-control" />
-                <span asp-validation-for="Originality" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ContentComments" class="control-label"></label>
-                <input asp-for="ContentComments" class="form-control" />
-                <span asp-validation-for="ContentComments" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OrganizationOfPaper" class="control-label"></label>
-                <input asp-for="OrganizationOfPaper" class="form-control" />
-                <span asp-validation-for="OrganizationOfPaper" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ClarityOfMainMessage" class="control-label"></label>
-                <input asp-for="ClarityOfMainMessage" class="form-control" />
-                <span asp-validation-for="ClarityOfMainMessage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Mechanics" class="control-label"></label>
-                <input asp-for="Mechanics" class="form-control" />
-                <span asp-validation-for="Mechanics" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WrittenDocumentComments" class="control-label"></label>
-                <input asp-for="WrittenDocumentComments" class="form-control" />
-                <span asp-validation-for="WrittenDocumentComments" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SuitabilityForPresentation" class="control-label"></label>
-                <input asp-for="SuitabilityForPresentation" class="form-control" />
-                <span asp-validation-for="SuitabilityForPresentation" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PotentialInterestInTopic" class="control-label"></label>
-                <input asp-for="PotentialInterestInTopic" class="form-control" />
-                <span asp-validation-for="PotentialInterestInTopic" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PotentialForOralPresentationComments" class="control-label"></label>
-                <input asp-for="PotentialForOralPresentationComments" class="form-control" />
-                <span asp-validation-for="PotentialForOralPresentationComments" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OverallRating" class="control-label"></label>
-                <input asp-for="OverallRating" class="form-control" />
-                <span asp-validation-for="OverallRating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OverallRatingComments" class="control-label"></label>
-                <input asp-for="OverallRatingComments" class="form-control" />
-                <span asp-validation-for="OverallRatingComments" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ComfortLevelTopic" class="control-label"></label>
-                <input asp-for="ComfortLevelTopic" class="form-control" />
-                <span asp-validation-for="ComfortLevelTopic" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ComfortLevelAcceptability" class="control-label"></label>
-                <input asp-for="ComfortLevelAcceptability" class="form-control" />
-                <span asp-validation-for="ComfortLevelAcceptability" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Complete" class="control-label"></label>
-                <input asp-for="Complete" class="form-control" />
-                <span asp-validation-for="Complete" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
+<h6 class="PaperTitle">Paper 1 Title</h6>
+<br />
 <div>
-    <a asp-action="Index">Back to List</a>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h6  style="position:relative; top:20px;right:500px"> Content</h6>
+        <span asp-validation-for="AppropriatenessOfTopic" class="text-danger"></span>
+        <div class="">
+            <br />
+        <div class="">
+            <label asp-for="AppropriatenessOfTopic" class="fieldlabels"></label>
+            <select name="AppropriatenessOfTopic" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+        </div>
+        <div class="">
+            <label asp-for="TimelinessOfTopic" class="fieldlabels"></label>
+            <select name="TimelinessOfTopic" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="TimelinessOfTopic" class="text-danger"></span>
+        </div>
+        </div>
+        <div class="">
+            <div class="">
+            <label asp-for="Originality" class="fieldlabels"></label>
+            <select name ="Originality" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="Originality" class="text-danger"></span>
+        </div>
+        <div class="">
+            <label asp-for="SupportiveEvidence" class="fieldlabels"></label>
+            <select name="SupportiveEvidence" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="SupportiveEvidence" class="text-danger"></span>
+        </div>
+        </div>
+        <div class="">
+            <label asp-for="TechnicalQuality" class="fieldlabels"></label>
+            <select name ="TechnicalQuality" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="TechnicalQuality" class="text-danger"></span>
+        </div>
+        <div class="">
+            <label asp-for="ScopeOfCoverage" class="fieldlabels"></label>
+            <select name ="ScopeOfCoverage" class="datafields">
+            <<option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="ScopeOfCoverage" class="text-danger"></span>
+        </div>
+
+        <div class="">
+        <div class="">
+            <label asp-for="CitationOfPreviousWork" class="fieldlabels"></label>
+            <select name ="CitationOfPreviousWork" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="CitationOfPreviousWork" class="text-danger"></span>
+        </div>
+        <div class="">
+            <label asp-for="ContentComments" class="fieldlabels"></label>
+            <input asp-for="ContentComments" class="datafields2">
+            <span asp-validation-for="ContentComments" class="text-danger"></span>
+        </div>
+        </div>
+        <br />
+           
+        <h6 class="Categories">Written Document</h6>
+        <div class="">
+            <label asp-for="OrganizationOfPaper" class="fieldlabels"></label>
+            <select name ="OrganizationOfPaper" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="OrganizationOfPaper" class="text-danger"></span>
+        </div>
+        <div class="">
+            <label asp-for="ClarityOfMainMessage" class="fieldlabels"></label>
+            <select name ="ClarityOfMainMessage" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="ClarityOfMainMessage" class="text-danger"></span>
+        </div>
+        <div class="">
+            <label asp-for="Mechanics" class="fieldlabels"></label>
+            <select name ="Mechanics" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="Mechanics" class="text-danger"></span>
+        </div>
+        <div class="">
+            <label asp-for="WrittenDocumentComments" class="fieldlabels"></label>
+            <input asp-for="WrittenDocumentComments" class="datafields2">
+            <span asp-validation-for="WrittenDocumentComments" class="text-danger"></span>
+        </div>
+        </br>
+        <h6 class="Categories">Potential for Oral Presentation </h6>
+        <div class="">
+            <label asp-for="SuitabilityForPresentation" class="fieldlabels"></label>
+            <select name ="SuitabilityForPresentation" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="SuitabilityForPresentation" class="text-danger"></span>
+        </div>
+        <div class="">
+            <label asp-for="PotentialInterestInTopic" class="fieldlabels"></label>
+            <select name ="PotentialInterestInTopic" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="PotentialInterestInTopic" class="text-danger"></span>
+        </div>
+        <div class="">
+            <label asp-for="PotentialForOralPresentationComments" class="fieldlabels"></label>
+            <input asp-for="PotentialForOralPresentationComments" class="datafields2">
+            <span asp-validation-for="PotentialForOralPresentationComments" class="text-danger"></span>
+        </div>
+        <div class="">
+            <label asp-for="OverallRating" class="fieldlabels"></label>
+            <select name="OverallRating" class="datafields">
+            <option selected disabled>Score</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            </select>
+            <span asp-validation-for="OverallRating" class="text-danger"></span>
+        </div>
+            <div class="">
+            <label asp-for="OverallRatingComments" class="fieldlabels"></label>
+            <input asp-for="OverallRatingComments" class="datafields2">
+            <span asp-validation-for="OverallRatingComments" class="text-danger"></span>
+        </div>
+        <div class="">
+            <input type="submit" value="Submit Review" class="continue" />
+        </div>
+    </form>
 </div>
 
 @section Scripts {

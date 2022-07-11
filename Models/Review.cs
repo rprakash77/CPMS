@@ -31,7 +31,7 @@ namespace CPMSDbFirst.Models
         [Display(Name = "Originality")]
         public decimal Originality { get; set; }
         [Display(Name = "Comments")]
-        public string ContentComments { get; set; } = null!;
+        public string? ContentComments { get; set; } = null!;
         [Display(Name = "Organization of Paper")]
         public decimal OrganizationOfPaper { get; set; }
         [Display(Name = "Clarity of Main Message")]
@@ -45,7 +45,7 @@ namespace CPMSDbFirst.Models
         [Display(Name = "Potential Interest in Topic")]
         public decimal PotentialInterestInTopic { get; set; }
         [Display(Name = "Comments")]
-        public string PotentialForOralPresentationComments { get; set; } = null!;
+        public string? PotentialForOralPresentationComments { get; set; } = null!;
         [Display(Name = "Overall Rating")]
         public decimal OverallRating { get; set; }
         [Display(Name = "Comments")]

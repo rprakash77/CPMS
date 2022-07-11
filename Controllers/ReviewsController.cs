@@ -60,8 +60,6 @@ namespace CPMSDbFirst.Controllers
         [Authorize(Policy = "ReviewerUser")]
         public IActionResult Create()
         {
-            ViewData["PaperId"] = new SelectList(_context.Papers, "PaperId", "PaperId");
-            ViewData["ReviewerId"] = new SelectList(_context.Reviewers, "ReviewerId", "ReviewerId");
             return View();
         }
 
@@ -75,10 +73,9 @@ namespace CPMSDbFirst.Controllers
             {
                 _context.Add(review);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["success"] = "Review has been submitted in succesfully!";
+                return RedirectToAction("Index", "Home");
             }
-            ViewData["PaperId"] = new SelectList(_context.Papers, "PaperId", "PaperId", review.PaperId);
-            ViewData["ReviewerId"] = new SelectList(_context.Reviewers, "ReviewerId", "ReviewerId", review.ReviewerId);
             return View(review);
         }
 

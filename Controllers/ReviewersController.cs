@@ -72,6 +72,7 @@ namespace CPMSDbFirst.Controllers
             {
                 _context.Add(reviewer);
                 await _context.SaveChangesAsync();
+                TempData["success"] = "You have been registered successfully! Please Login!";
                 return RedirectToAction("Index", "Home");
             }
             return View(reviewer);
@@ -123,7 +124,7 @@ namespace CPMSDbFirst.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             return View(reviewer);
         }
@@ -164,6 +165,7 @@ namespace CPMSDbFirst.Controllers
             }
 
             await _context.SaveChangesAsync();
+            TempData["success"] = "Table Updated Successfully!";
             return RedirectToAction(nameof(Index));
         }
 
@@ -187,6 +189,7 @@ namespace CPMSDbFirst.Controllers
             if (EmailAddress == "Admin@gmail.com" && Password == "Admin")
             {
                 await SignInAdmin(EmailAddress);
+                TempData["success"] = "You have logged in as Admin succesfully!";
                 return RedirectToAction("Index", "Home");
             }
             bool ValidCredentials = ReviewerCredentials(EmailAddress, Password);
@@ -195,6 +198,7 @@ namespace CPMSDbFirst.Controllers
                 return View();
             }
             await SignInReviewer(EmailAddress);
+            TempData["success"] = "You have logged in succesfully!";
             return RedirectToAction("Index", "Home");
         }
 
@@ -229,7 +233,8 @@ namespace CPMSDbFirst.Controllers
                 new ClaimsPrincipal(claimsIdentity));
         }
 
-        //AuthorExistChecker
+        //ReviewerExistChecker
+        //Uses SQL procedure from database "Reviewer Login"
         private bool ReviewerCredentials(string Email, string Password)
         {
             using (SqlConnection SqlConn = new SqlConnection("Server=GLENN-LAPTOP;Database=CPMS;Trusted_Connection=True;"))
@@ -271,6 +276,7 @@ namespace CPMSDbFirst.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
+            TempData["success"] = "You logged out succesfully!";
             return RedirectToAction("Index", "Home");
         }
     }

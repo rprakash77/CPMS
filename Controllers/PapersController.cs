@@ -75,6 +75,7 @@ namespace CPMSDbFirst.Controllers
             _context.Add(paper);
             await _context.SaveChangesAsync();
             await UploadFile(File, paper.PaperId);
+            TempData["success"] = "Paper has been submitted succesfully!";
             return RedirectToAction("Index","Home");       
         }
 
