@@ -73,7 +73,7 @@ namespace CPMSDbFirst.Controllers
             {
                 _context.Add(author);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
             return View(author);
         }
@@ -124,7 +124,7 @@ namespace CPMSDbFirst.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index"); ;
             }
             return View(author);
         }
@@ -165,7 +165,7 @@ namespace CPMSDbFirst.Controllers
             }
             
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index"); ;
         }
 
         private bool AuthorExists(int id)

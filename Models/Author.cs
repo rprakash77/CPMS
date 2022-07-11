@@ -39,7 +39,7 @@ namespace CPMSDbFirst.Models
         [StringLength(2)]
         public string? State { get; set; }
         [StringLength(10)]
-        public string ZipCode { get; set; }
+        public string? ZipCode { get; set; }
         [StringLength(50)]
         [Display(Name = "Phone Number")]
         public string? PhoneNumber { get; set; }

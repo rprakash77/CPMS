@@ -1,86 +1,145 @@
 ﻿@model CPMSDbFirst.Models.Author
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Author Registration";
 }
 
-<h1>Create</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CPMS.styles.css" asp-append-version="true" />
+    <style>
+        body{
+                background-color:lightgray;
+        }
+        label{
+                background-color:white;
+                padding-bottom:5px;
+                padding-left:7px;
+                border-style: solid;
+                font-weight:bold;
+                display: inline-block;
+                float: left;
+                width: 250px;
+                height:30px;
+                text-align: left; /*Change to right here if you want it close to the inputs*/
+                white-space: nowrap;
+                margin-bottom: 25px;
+        }
+        span {
+            font-size:14pt;
+            font-weight:bold;
+            color:red; 
+        }
+        input  {
+                padding-bottom:5px;
+                padding-left:10px;
+                border-style: solid;
+                border-color:black;
+                border-width: 3px;
+                font-weight:bold;
+                width: 250px;
+                height:30.5px;
+                margin-left:50px;
+                white-space: nowrap; /* Prevents wrapping */
+                margin-bottom: 25px;
+        }
+        .column1 {
+             display: inline-block;
+             white-space: nowrap;
+             float:left;
+             margin-right: 150px;
+        }
+        .column2{
+            float:right;
+        }
+        .continue {
+            margin-top:85px;
+            border-width:3px;
+        }
+        .continue:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<h1 style="border-style:solid; padding-left:7.5px; background-color:white;padding-bottom:10px;">Author Registration</h1>
 
-<h4>Author</h4>
+<h5 style="border-style:solid; padding-left:7.5px; background-color:white;padding-bottom:10px">Instructions: Please fill out the information below</h5>
+
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MiddleInitial" class="control-label"></label>
-                <input asp-for="MiddleInitial" class="form-control" />
-                <span asp-validation-for="MiddleInitial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Affiliation" class="control-label"></label>
-                <input asp-for="Affiliation" class="form-control" />
-                <span asp-validation-for="Affiliation" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Department" class="control-label"></label>
-                <input asp-for="Department" class="form-control" />
-                <span asp-validation-for="Department" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ZipCode" class="control-label"></label>
-                <input asp-for="ZipCode" class="form-control" />
-                <span asp-validation-for="ZipCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EmailAddress" class="control-label"></label>
-                <input asp-for="EmailAddress" class="form-control" />
-                <span asp-validation-for="EmailAddress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
 <div>
-    <a asp-action="Index">Back to List</a>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" r></div>
+        <div class="column1">
+        <span asp-validation-for="FirstName" ></span>
+        <div class="">
+            <label asp-for="FirstName" class=""></label>
+            <input asp-for="FirstName"  />
+        </div>
+        <span asp-validation-for="MiddleInitial" ></span>
+        <div class="">
+            <label asp-for="MiddleInitial" class=""></label>
+            <input asp-for="MiddleInitial"  />
+        </div>
+        <span asp-validation-for="LastName" ></span>
+        <div class="">
+            <label asp-for="LastName" class=""></label>
+            <input asp-for="LastName"  />
+        </div>
+        <span asp-validation-for="EmailAddress" ></span>
+            <div class="">
+            <label asp-for="EmailAddress" class=""></label>
+            <input asp-for="EmailAddress"  />
+        </div>
+        <span asp-validation-for="Password" ></span>
+        <div class="">
+            <label asp-for="Password" class=""></label>
+            <input asp-for="Password"  />
+        </div>
+        <span asp-validation-for="Affiliation" ></span>
+        <div class="">
+            <label asp-for="Affiliation" class=""></label>
+            <input asp-for="Affiliation"  />
+        </div>
+        <div class="">
+            <label asp-for="Department" class=""></label>
+            <input asp-for="Department"  />
+        </div>
+            <span asp-validation-for="Department" ></span>
+        </div>
+        <div class="column2">
+        <div class="">
+            <label asp-for="Address" class=""></label>
+            <input asp-for="Address"  />
+            <span asp-validation-for="Address" ></span>
+        </div>
+        <div class="">
+            <label asp-for="City" class=""></label>
+            <input asp-for="City"  />
+            <span asp-validation-for="City" ></span>
+        </div>
+        <div class="">
+            <label asp-for="State" class=""></label>
+            <input asp-for="State"  />
+            <span asp-validation-for="State" ></span>
+        </div>
+        <div class="">
+            <label asp-for="ZipCode" class=""></label>
+            <input asp-for="ZipCode"  />
+            <span asp-validation-for="ZipCode" ></span>
+        </div>
+        <div class="">
+            <label asp-for="PhoneNumber" class=""></label>
+            <input asp-for="PhoneNumber"  />
+            <span asp-validation-for="PhoneNumber" ></span>
+        </div>
+        </div>
+        <div class="">
+            <input type="submit" value="Continue and Upload Paper(s)" style= "float:right" class="continue"/>
+        </div>
+    </form>
 </div>
 
 @section Scripts {

@@ -184,7 +184,7 @@ namespace CPMSDbFirst.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> ReviewerLogin(string EmailAddress, string Password)
         {
-            if (EmailAddress == "Admin" && Password == "Admin")
+            if (EmailAddress == "Admin@gmail.com" && Password == "Admin")
             {
                 await SignInAdmin(EmailAddress);
                 return RedirectToAction("Index", "Home");
