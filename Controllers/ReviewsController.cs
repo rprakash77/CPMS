@@ -18,7 +18,7 @@ using CPMSDbFirst.Models;
 
 namespace CPMSDbFirst.Controllers
 {
-    public class ReviewsController : Controller
+    public class ReviewsController : Controller 
     {
         private readonly ApplicationDbContext _context;
 
